@@ -2,8 +2,8 @@ header:
   version: 14
 
 machine: verdin-imx8mp
-distro: nodistro
-target: mouadh-os
+distro: mouadh-os
+target: core-image-minimal
 
 repos:
   meta-freescale:
@@ -69,6 +69,9 @@ local_conf_header:
       HALT,${DL_DIR},100M,1K \
       HALT,${SSTATE_DIR},100M,1K \
       HALT,/tmp,10M,1K"
+  shared: |
+    DL_DIR = "~/Documents/yocto-project/shared/downloads"
+    SSTATE_DIR = "~/Documents/yocto-project/shared/sstate-cache" 
 
 env:
   ACCEPT_FSL_EULA: "1"
